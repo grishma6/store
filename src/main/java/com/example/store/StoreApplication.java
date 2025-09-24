@@ -13,6 +13,9 @@ public class StoreApplication {
         var orderService = context.getBean(OrderService.class);
         orderService.placeOrder();
 
+        var resource = context.getBean(HeavyResource.class);
+
+
         //orderService.setPaymentService(new PaypalPaymentService());
         //orderService.placeOrder();
 
