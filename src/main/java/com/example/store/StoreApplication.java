@@ -9,13 +9,15 @@ public class StoreApplication {
 
     public static void main(String[] args) {
         ApplicationContext context = SpringApplication.run(StoreApplication.class, args);
+
         var orderService = context.getBean(OrderService.class);
-        //var orderService = new OrderService(new StripePaymentService());
+        orderService.placeOrder();
+
+        //orderService.setPaymentService(new PaypalPaymentService());
         //orderService.placeOrder();
 
-        //var orderService = new OrderService();
-        orderService.setPaymentService(new PaypalPaymentService());
-        orderService.placeOrder();
+        //NotificationService manager = new EmailNotificationService();
+        //manager.send("This is a test");
     }
-
 }
+
