@@ -30,6 +30,16 @@ public class StoreApplication {
                 .email("grishmagolla@gmail.com")
                 .build();
 
+        var address = Address.builder()
+                //.zip("zip")
+                .city("Dallas")
+                .street("Farmers Branch")
+                //.userId(5)
+                .build();
+
+        user.addAddress(address);
+        System.out.println(user);
+
 
         //context.close();
     }
