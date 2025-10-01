@@ -40,6 +40,9 @@ public class StoreApplication {
         user.addAddress(address);
         System.out.println(user);
 
+        var tag = new Tag("tag1");
+
+        user.addTag("tag1");
 
         //context.close();
     }
