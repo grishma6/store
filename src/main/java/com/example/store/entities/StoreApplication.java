@@ -44,6 +44,13 @@ public class StoreApplication {
 
         user.addTag("tag1");
 
+        var profile = Profile.builder()
+                .bio("bio")
+                .build();
+
+        user.setProfile(profile);
+        profile.setUser(user);
+
         //context.close();
     }
 }

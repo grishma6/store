@@ -1,10 +1,12 @@
 package com.example.store.entities;
 
 import jakarta.persistence.*;
-import lombok.Builder;
-import lombok.Getter;
-import lombok.Setter;
+import lombok.*;
 
+@Builder
+@AllArgsConstructor
+@NoArgsConstructor
+@ToString
 @Entity
 @Getter
 @Setter
@@ -27,6 +29,12 @@ public class Profile {
 
     @Column(name = "loyalty_points")
     private Long loyaltyPoints;
+
+    @OneToOne
+    @JoinColumn(name = "id")
+    @MapsId
+    @ToString.Exclude
+    private User user;
 
 
 
